@@ -88,9 +88,13 @@ body {
 }
 
 .button-container {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     justify-content: center;
+    gap: 15px;
 }
+
 
 /* Estilos de entrada de texto */
 .input-title {
@@ -151,12 +155,42 @@ ul {
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
-}
 
+}
+.button-reload{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: #636ce6;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f8f2f2;
+    border: solid 2px #636ce6;
+}
+.button-reload img{
+    width: 20%;
+
+}
+.button-reload:hover{
+    background-color: #636ce6;
+    color: white;
+}
 .button-draw img {
     margin-right: 40px;
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+@media (max-width: 800px) {
+    .header-banner {
+        flex: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 40px 0 0;
+    }
 }
