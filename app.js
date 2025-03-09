@@ -5,22 +5,21 @@ function validarNombre(nombre) {
   return regex.test(nombre);
 }
 function showOverlay(messageToUser, type) {
-//background
- // Crear el fondo que cubre toda la pantalla
- let background = document.createElement("div");
- background.id = "overlayBackground";
- background.style.position = "fixed";
- background.style.top = "0";
- background.style.left = "0";
- background.style.width = "100vw";
- background.style.height = "100vh";
- background.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
- background.style.zIndex = "999";
- background.onclick = function () {
-     document.body.removeChild(overlay);
-     document.body.removeChild(background);
- };
-
+  //background
+  // Crear el fondo que cubre toda la pantalla
+  let background = document.createElement("div");
+  background.id = "overlayBackground";
+  background.style.position = "fixed";
+  background.style.top = "0";
+  background.style.left = "0";
+  background.style.width = "100vw";
+  background.style.height = "100vh";
+  background.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  background.style.zIndex = "999";
+  background.onclick = function () {
+    document.body.removeChild(overlay);
+    document.body.removeChild(background);
+  };
 
   // Crear el contenedor del overlay
   let overlay = document.createElement("div");
@@ -35,7 +34,7 @@ function showOverlay(messageToUser, type) {
   overlay.style.display = "flex";
   overlay.style.justifyContent = "center";
   overlay.style.alignItems = "center";
- overlay.style.padding='10px';
+  overlay.style.padding = "10px";
   overlay.style.borderRadius = "10px";
   overlay.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
   overlay.style.textAlign = "center";
@@ -65,9 +64,8 @@ function showOverlay(messageToUser, type) {
   closeButton.onclick = function () {
     document.body.removeChild(overlay);
     document.body.removeChild(background);
-};
+  };
 
- 
   // Agregar elementos
   overlay.appendChild(closeButton);
   overlay.appendChild(message);
@@ -109,6 +107,8 @@ function addList(friend) {
   listFriendsStored.push(friend);
 }
 const showFriends = () => {
+  let result = document.getElementById("resultado");
+  result.innerHTML = "";
   let list = document.getElementById("listaAmigos");
   list.innerHTML = "";
 
@@ -126,12 +126,12 @@ const showFriends = () => {
   });
 };
 const showChosenFriend = (value) => {
-let list = document.getElementById("listaAmigos");
+  let list = document.getElementById("listaAmigos");
   list.innerHTML = "";
   let result = document.getElementById("resultado");
   result.innerHTML = "";
   let li = document.createElement("li");
-  li.textContent = "El amigo secreto será: "+value;
+  li.textContent = "El amigo secreto será: " + value;
   li.style.color = "#fe652b";
   li.style.padding = "15px";
   li.style.fontSize = "1.3rem";
@@ -158,11 +158,10 @@ function drawAFriend() {
 function numberRamdon(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function reload(){
-let list = document.getElementById("listaAmigos");
+function reload() {
+  let list = document.getElementById("listaAmigos");
   list.innerHTML = "";
   let result = document.getElementById("resultado");
   result.innerHTML = "";
- listFriendsStored = [];
-
+  listFriendsStored = [];
 }
