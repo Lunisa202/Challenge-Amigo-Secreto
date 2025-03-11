@@ -75,7 +75,6 @@ function showOverlay(messageToUser, type) {
 
 function addFriend() {
   let friend = document.querySelector("#amigo").value;
-  console.log(friend);
   if (validarNombre(friend) && friend.length > 3) {
     // agregar nombre a la lista de nombres
     let isAdded = checkFriendNotDuplicated(friend);
@@ -105,6 +104,8 @@ function checkFriendNotDuplicated(nameFriend) {
 }
 function addList(friend) {
   listFriendsStored.push(friend);
+  document.querySelector("#amigo").value = "";
+
 }
 const showFriends = () => {
   let result = document.getElementById("resultado");
@@ -164,4 +165,6 @@ function reload() {
   let result = document.getElementById("resultado");
   result.innerHTML = "";
   listFriendsStored = [];
+  document.querySelector("#amigo").value = "";
+
 }
