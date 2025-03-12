@@ -81,8 +81,6 @@ function addFriend() {
     if (isAdded) {
       addList(friend);
     }
-    //limpiar input
-    document.querySelector("#amigo").value = "";
     //agregar amigo al HTML
     showFriends();
   } else {
@@ -92,6 +90,9 @@ function addFriend() {
       "error"
     );
   }
+  //limpiar input
+  document.querySelector("#amigo").value = "";
+
 }
 function checkFriendNotDuplicated(nameFriend) {
   if (listFriendsStored.includes(nameFriend)) {
